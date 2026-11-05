@@ -1,0 +1,18 @@
+name: DataSHIELD Argument Naming Apply
+
+on:
+  workflow_dispatch:
+
+jobs:
+  apply-naming:
+    permissions:
+      contents: write
+      pull-requests: write
+    uses: nfdi4health/datashield-workflows/.github/workflows/ds-naming-apply.yml@main
+    with:
+      server-repository: FlorianSchw/dsBase
+      server-ref: v6.3.6-dev
+      base-branch: v6.3.6-dev
+    secrets:
+      app-client-id: ${{ secrets.APP_CLIENT_ID }}
+      app-private-key: ${{ secrets.APP_PRIVATE_KEY }}
