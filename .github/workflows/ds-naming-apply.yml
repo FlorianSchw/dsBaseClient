@@ -1,6 +1,9 @@
 name: DataSHIELD Argument Naming Apply
 
 on:
+  push:
+    branches: ['6.3.6']
+    paths: ['.github/ds-naming/transformations.yml']
   workflow_dispatch:
 
 jobs:
