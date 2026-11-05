@@ -1,0 +1,6262 @@
+# DataSHIELD argument renames, written by the ds-naming-check workflow.
+# Review each entry and set `status`:
+#   approved  rename `current` to `proposed` (you may change `proposed`)
+#   skip      keep the current name; later runs keep this decision
+# `proposed` and `unresolved` entries are left alone by ds-naming-apply.
+# `rule_open: true`: the rule itself is not agreed yet (front-runner used).
+# `linked`: client/server counterparts, renamed in lockstep when approved too.
+
+meta:
+  rules_version: 0.1.0
+  packages:
+    - name: dsBaseClient
+      side: client
+      repository: FlorianSchw/dsBaseClient
+    - name: dsBase
+      side: server
+      repository: FlorianSchw/dsBase
+entries:
+  - id: dsBaseClient::ds.asCharacter::x.name
+    package: dsBaseClient
+    side: client
+    function: ds.asCharacter
+    current: x.name
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBase::asCharacterDS::x.name
+  - id: dsBaseClient::ds.asDataMatrix::x.name
+    package: dsBaseClient
+    side: client
+    function: ds.asDataMatrix
+    current: x.name
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: rule
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBase::asDataMatrixDS::x.name
+  - id: dsBaseClient::ds.asFactor::input.var.name
+    package: dsBaseClient
+    side: client
+    function: ds.asFactor
+    current: input.var.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: alias
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::asFactorDS1::input.var.name
+      - dsBase::asFactorDS2::input.var.name
+  - id: dsBaseClient::ds.asFactor::newobj.name
+    package: dsBaseClient
+    side: client
+    function: ds.asFactor
+    current: newobj.name
+    proposed: newobj
+    status: proposed
+    rule: roles.new_object
+    match: alias
+    role: new_object
+    class: vector
+    confidence: high
+    source: rules
+    reason: new object (name)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.asFactorSimple::input.var.name
+    package: dsBaseClient
+    side: client
+    function: ds.asFactorSimple
+    current: input.var.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: alias
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::asFactorSimpleDS::input.var.name
+  - id: dsBaseClient::ds.asFactorSimple::newobj.name
+    package: dsBaseClient
+    side: client
+    function: ds.asFactorSimple
+    current: newobj.name
+    proposed: newobj
+    status: proposed
+    rule: roles.new_object
+    match: alias
+    role: new_object
+    class: vector
+    confidence: high
+    source: rules
+    reason: new object (name)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.asInteger::x.name
+    package: dsBaseClient
+    side: client
+    function: ds.asInteger
+    current: x.name
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBase::asIntegerDS::x.name
+  - id: dsBaseClient::ds.asList::x.name
+    package: dsBaseClient
+    side: client
+    function: ds.asList
+    current: x.name
+    proposed: lst
+    status: proposed
+    rule: classes.list
+    match: rule
+    role: object
+    class: list
+    confidence: high
+    source: rules
+    reason: list object (doc)
+    linked:
+      - dsBase::asListDS::x.name
+  - id: dsBaseClient::ds.asLogical::x.name
+    package: dsBaseClient
+    side: client
+    function: ds.asLogical
+    current: x.name
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBase::asLogicalDS::x.name
+  - id: dsBaseClient::ds.asMatrix::x.name
+    package: dsBaseClient
+    side: client
+    function: ds.asMatrix
+    current: x.name
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: rule
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBase::asMatrixDS::x.name
+  - id: dsBaseClient::ds.asNumeric::x.name
+    package: dsBaseClient
+    side: client
+    function: ds.asNumeric
+    current: x.name
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBase::asNumericDS::x.name
+  - id: dsBaseClient::ds.assign::toAssign
+    package: dsBaseClient
+    side: client
+    function: ds.assign
+    current: toAssign
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.auc::pred
+    package: dsBaseClient
+    side: client
+    function: ds.auc
+    current: pred
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::aucDS::pred
+  - id: dsBaseClient::ds.Boole::V1
+    package: dsBaseClient
+    side: client
+    function: ds.Boole
+    current: V1
+    proposed: x
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::BooleDS::V1.name
+  - id: dsBaseClient::ds.Boole::V2
+    package: dsBaseClient
+    side: client
+    function: ds.Boole
+    current: V2
+    proposed: 'y'
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::BooleDS::V2.name
+  - id: dsBaseClient::ds.Boole::Boolean.operator
+    package: dsBaseClient
+    side: client
+    function: ds.Boole
+    current: Boolean.operator
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.Boole::na.assign
+    package: dsBaseClient
+    side: client
+    function: ds.Boole
+    current: na.assign
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBase::BooleDS::na.assign.text
+  - id: dsBaseClient::ds.boxPlot::x
+    package: dsBaseClient
+    side: client
+    function: ds.boxPlot
+    current: x
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.cbind::DataSHIELD.checks
+    package: dsBaseClient
+    side: client
+    function: ds.cbind
+    current: DataSHIELD.checks
+    proposed: checks
+    status: proposed
+    rule: roles.checks
+    rule_open: true
+    match: alias
+    role: checks
+    confidence: high
+    source: rules
+    reason: checks (name)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.changeRefGroup::ref
+    package: dsBaseClient
+    side: client
+    function: ds.changeRefGroup
+    current: ref
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBase::changeRefGroupDS::ref
+  - id: dsBaseClient::ds.changeRefGroup::reorderByRef
+    package: dsBaseClient
+    side: client
+    function: ds.changeRefGroup
+    current: reorderByRef
+    proposed: reorder.by.ref
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBase::changeRefGroupDS::reorderByRef
+  - id: dsBaseClient::ds.colnames::x
+    package: dsBaseClient
+    side: client
+    function: ds.colnames
+    current: x
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::colnamesDS::x
+  - id: dsBaseClient::ds.completeCases::x1
+    package: dsBaseClient
+    side: client
+    function: ds.completeCases
+    current: x1
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.cor::y
+    package: dsBaseClient
+    side: client
+    function: ds.cor
+    current: 'y'
+    proposed: ''
+    status: unresolved
+    rule: classes.vector
+    match: conflict
+    role: object
+    class: vector
+    confidence: medium
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::corDS::y
+    note: '`x` is proposed for `x` too; `x` keeps it'
+  - id: dsBaseClient::ds.cov::y
+    package: dsBaseClient
+    side: client
+    function: ds.cov
+    current: 'y'
+    proposed: ''
+    status: unresolved
+    rule: classes.vector
+    match: conflict
+    role: object
+    class: vector
+    confidence: medium
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::covDS::y
+    note: '`x` is proposed for `x` too; `x` keeps it'
+  - id: dsBaseClient::ds.cov::naAction
+    package: dsBaseClient
+    side: client
+    function: ds.cov
+    current: naAction
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBase::covDS::use
+  - id: dsBaseClient::ds.dataFrame::x
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrame
+    current: x
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.dataFrame::row.names
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrame
+    current: row.names
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.dataFrame::check.rows
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrame
+    current: check.rows
+    proposed: ''
+    status: unresolved
+    rule: roles.checks
+    rule_open: true
+    match: conflict
+    role: checks
+    confidence: high
+    source: rules
+    reason: checks (name)
+    linked:
+      - dsBase::dataFrameDS::ch.rows
+    note: '`checks` is proposed for `check.names`, `DataSHIELD.checks` too; `DataSHIELD.checks`
+      keeps it'
+  - id: dsBaseClient::ds.dataFrame::check.names
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrame
+    current: check.names
+    proposed: ''
+    status: unresolved
+    rule: roles.checks
+    rule_open: true
+    match: conflict
+    role: checks
+    confidence: high
+    source: rules
+    reason: checks (name)
+    linked:
+      - dsBase::dataFrameDS::ch.names
+    note: '`checks` is proposed for `check.rows`, `DataSHIELD.checks` too; `DataSHIELD.checks`
+      keeps it'
+  - id: dsBaseClient::ds.dataFrame::stringsAsFactors
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrame
+    current: stringsAsFactors
+    proposed: strings.as.factors
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBase::dataFrameDS::strAsFactors
+  - id: dsBaseClient::ds.dataFrame::completeCases
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrame
+    current: completeCases
+    proposed: complete.cases
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBase::dataFrameDS::completeCases
+  - id: dsBaseClient::ds.dataFrame::DataSHIELD.checks
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrame
+    current: DataSHIELD.checks
+    proposed: checks
+    status: proposed
+    rule: roles.checks
+    rule_open: true
+    match: alias
+    role: checks
+    confidence: high
+    source: rules
+    reason: checks (name)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.dataFrameFill::df.name
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrameFill
+    current: df.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::colnamesDS::x
+      - dsBase::dataFrameFillDS::df.name
+  - id: dsBaseClient::ds.dataFrameSort::df.name
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrameSort
+    current: df.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::dataFrameSortDS::df.name
+  - id: dsBaseClient::ds.dataFrameSort::sort.key.name
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrameSort
+    current: sort.key.name
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBase::dataFrameSortDS::sort.key.name
+  - id: dsBaseClient::ds.dataFrameSort::sort.method
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrameSort
+    current: sort.method
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBase::dataFrameSortDS::sort.method
+  - id: dsBaseClient::ds.dataFrameSubset::df.name
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrameSubset
+    current: df.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::dataFrameSubsetDS1::df.name
+      - dsBase::dataFrameSubsetDS2::df.name
+  - id: dsBaseClient::ds.dataFrameSubset::V1.name
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrameSubset
+    current: V1.name
+    proposed: x
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::dataFrameSubsetDS1::V1.name
+      - dsBase::dataFrameSubsetDS2::V1.name
+  - id: dsBaseClient::ds.dataFrameSubset::V2.name
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrameSubset
+    current: V2.name
+    proposed: 'y'
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::dataFrameSubsetDS1::V2.name
+      - dsBase::dataFrameSubsetDS2::V2.name
+  - id: dsBaseClient::ds.dataFrameSubset::Boolean.operator
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrameSubset
+    current: Boolean.operator
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.dataFrameSubset::keep.NAs
+    package: dsBaseClient
+    side: client
+    function: ds.dataFrameSubset
+    current: keep.NAs
+    proposed: keep.nas
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBase::dataFrameSubsetDS1::keep.NAs
+      - dsBase::dataFrameSubsetDS2::keep.NAs
+  - id: dsBaseClient::ds.dim::x
+    package: dsBaseClient
+    side: client
+    function: ds.dim
+    current: x
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBase::dimDS::x
+  - id: dsBaseClient::ds.exists::x
+    package: dsBaseClient
+    side: client
+    function: ds.exists
+    current: x
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.forestplot::mod
+    package: dsBaseClient
+    side: client
+    function: ds.forestplot
+    current: mod
+    proposed: lst
+    status: proposed
+    rule: classes.list
+    match: rule
+    role: object
+    class: list
+    confidence: medium
+    source: rules
+    reason: list object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.forestplot::variable
+    package: dsBaseClient
+    side: client
+    function: ds.forestplot
+    current: variable
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: alias
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.gamlss::data
+    package: dsBaseClient
+    side: client
+    function: ds.gamlss
+    current: data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::gamlssDS::data
+  - id: dsBaseClient::ds.gamlss::xvar
+    package: dsBaseClient
+    side: client
+    function: ds.gamlss
+    current: xvar
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::gamlssDS::xvar
+  - id: dsBaseClient::ds.getWGSR::sex
+    package: dsBaseClient
+    side: client
+    function: ds.getWGSR
+    current: sex
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::getWGSRDS::sex
+  - id: dsBaseClient::ds.getWGSR::firstPart
+    package: dsBaseClient
+    side: client
+    function: ds.getWGSR
+    current: firstPart
+    proposed: first.part
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBase::getWGSRDS::firstPart
+  - id: dsBaseClient::ds.getWGSR::secondPart
+    package: dsBaseClient
+    side: client
+    function: ds.getWGSR
+    current: secondPart
+    proposed: second.part
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBase::getWGSRDS::secondPart
+  - id: dsBaseClient::ds.getWGSR::index
+    package: dsBaseClient
+    side: client
+    function: ds.getWGSR
+    current: index
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBase::getWGSRDS::index
+  - id: dsBaseClient::ds.getWGSR::standing
+    package: dsBaseClient
+    side: client
+    function: ds.getWGSR
+    current: standing
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBase::getWGSRDS::standing
+  - id: dsBaseClient::ds.getWGSR::thirdPart
+    package: dsBaseClient
+    side: client
+    function: ds.getWGSR
+    current: thirdPart
+    proposed: third.part
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBase::getWGSRDS::thirdPart
+  - id: dsBaseClient::ds.glm::data
+    package: dsBaseClient
+    side: client
+    function: ds.glm
+    current: data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::glmDS1::data
+      - dsBase::glmDS2::dataName
+  - id: dsBaseClient::ds.glm::CI
+    package: dsBaseClient
+    side: client
+    function: ds.glm
+    current: CI
+    proposed: ci
+    status: proposed
+    rule: style
+    match: style
+    role: value
+    class: numeric
+    confidence: high
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.glm::viewIter
+    package: dsBaseClient
+    side: client
+    function: ds.glm
+    current: viewIter
+    proposed: view.iter
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.glm::viewVarCov
+    package: dsBaseClient
+    side: client
+    function: ds.glm
+    current: viewVarCov
+    proposed: view.var.cov
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.glm::viewCor
+    package: dsBaseClient
+    side: client
+    function: ds.glm
+    current: viewCor
+    proposed: view.cor
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.glmerSLMA::dataName
+    package: dsBaseClient
+    side: client
+    function: ds.glmerSLMA
+    current: dataName
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::glmerSLMADS2::dataName
+      - dsBase::glmerSLMADS.assign::dataName
+  - id: dsBaseClient::ds.glmerSLMA::control_type
+    package: dsBaseClient
+    side: client
+    function: ds.glmerSLMA
+    current: control_type
+    proposed: control.type
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBase::glmerSLMADS2::control_type
+      - dsBase::glmerSLMADS.assign::control_type
+  - id: dsBaseClient::ds.glmerSLMA::control_value
+    package: dsBaseClient
+    side: client
+    function: ds.glmerSLMA
+    current: control_value
+    proposed: control.value
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: medium
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.glmerSLMA::nAGQ
+    package: dsBaseClient
+    side: client
+    function: ds.glmerSLMA
+    current: nAGQ
+    proposed: n.agq
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: high
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - dsBase::glmerSLMADS2::nAGQ
+      - dsBase::glmerSLMADS.assign::nAGQ
+  - id: dsBaseClient::ds.glmerSLMA::start_theta
+    package: dsBaseClient
+    side: client
+    function: ds.glmerSLMA
+    current: start_theta
+    proposed: start.theta
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.glmerSLMA::start_fixef
+    package: dsBaseClient
+    side: client
+    function: ds.glmerSLMA
+    current: start_fixef
+    proposed: start.fixef
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.glmPredict::newdataname
+    package: dsBaseClient
+    side: client
+    function: ds.glmPredict
+    current: newdataname
+    proposed: ''
+    status: unresolved
+    rule: roles.new_object
+    match: conflict
+    role: new_object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: new object (name)
+    linked:
+      - dsBase::glmPredictDS.as::newdataname.transmit
+      - dsBase::glmPredictDS.ag::newdataname.transmit
+    note: '`newobj` is proposed for `newobj` too; `newobj` keeps it'
+  - id: dsBaseClient::ds.glmPredict::output.type
+    package: dsBaseClient
+    side: client
+    function: ds.glmPredict
+    current: output.type
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBase::glmPredictDS.as::output.type
+      - dsBase::glmPredictDS.ag::output.type
+  - id: dsBaseClient::ds.glmSLMA::dataName
+    package: dsBaseClient
+    side: client
+    function: ds.glmSLMA
+    current: dataName
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::glmSLMADS1::data
+      - dsBase::glmSLMADS.assign::dataName
+      - dsBase::glmSLMADS2::dataName
+  - id: dsBaseClient::ds.glmSummary::x.name
+    package: dsBaseClient
+    side: client
+    function: ds.glmSummary
+    current: x.name
+    proposed: model
+    status: proposed
+    rule: classes.model
+    match: rule
+    role: object
+    class: model
+    confidence: high
+    source: rules
+    reason: model object (doc)
+    linked:
+      - dsBase::glmSummaryDS.as::x.transmit
+      - dsBase::glmSummaryDS.ag::x.transmit
+  - id: dsBaseClient::ds.heatmapPlot::show
+    package: dsBaseClient
+    side: client
+    function: ds.heatmapPlot
+    current: show
+    proposed: ''
+    status: unresolved
+    rule: roles.method
+    match: conflict
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - 'dsBase::::'
+    note: '`method` is proposed for `method` too; `method` keeps it'
+  - id: dsBaseClient::ds.hetcor::data
+    package: dsBaseClient
+    side: client
+    function: ds.hetcor
+    current: data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::hetcorDS::data
+  - id: dsBaseClient::ds.hetcor::ML
+    package: dsBaseClient
+    side: client
+    function: ds.hetcor
+    current: ML
+    proposed: ml
+    status: proposed
+    rule: style
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBase::hetcorDS::ML
+  - id: dsBaseClient::ds.hetcor::use
+    package: dsBaseClient
+    side: client
+    function: ds.hetcor
+    current: use
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::hetcorDS::use
+  - id: dsBaseClient::ds.histogram::vertical.axis
+    package: dsBaseClient
+    side: client
+    function: ds.histogram
+    current: vertical.axis
+    proposed: ''
+    status: unresolved
+    rule: roles.method
+    match: conflict
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - 'dsBase::::'
+    note: '`method` is proposed for `method` too; `method` keeps it'
+  - id: dsBaseClient::ds.igb_standards::var
+    package: dsBaseClient
+    side: client
+    function: ds.igb_standards
+    current: var
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: alias
+    role: object
+    class: vector
+    confidence: low
+    source: rules
+    reason: vector object (name only)
+    linked:
+      - dsBase::igb_standardsDS::var
+  - id: dsBaseClient::ds.lexis::data
+    package: dsBaseClient
+    side: client
+    function: ds.lexis
+    current: data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::lexisDS2::datatext
+  - id: dsBaseClient::ds.lexis::intervalWidth
+    package: dsBaseClient
+    side: client
+    function: ds.lexis
+    current: intervalWidth
+    proposed: interval.width
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.lexis::idCol
+    package: dsBaseClient
+    side: client
+    function: ds.lexis
+    current: idCol
+    proposed: id.col
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBase::lexisDS2::idCol
+  - id: dsBaseClient::ds.lexis::entryCol
+    package: dsBaseClient
+    side: client
+    function: ds.lexis
+    current: entryCol
+    proposed: entry.col
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBase::lexisDS2::entryCol
+  - id: dsBaseClient::ds.lexis::exitCol
+    package: dsBaseClient
+    side: client
+    function: ds.lexis
+    current: exitCol
+    proposed: exit.col
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBase::lexisDS1::exitCol
+      - dsBase::lexisDS2::exitCol
+  - id: dsBaseClient::ds.lexis::statusCol
+    package: dsBaseClient
+    side: client
+    function: ds.lexis
+    current: statusCol
+    proposed: status.col
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBase::lexisDS2::statusCol
+  - id: dsBaseClient::ds.lexis::expandDF
+    package: dsBaseClient
+    side: client
+    function: ds.lexis
+    current: expandDF
+    proposed: newobj
+    status: proposed
+    rule: roles.new_object
+    match: rule
+    role: new_object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.list::x
+    package: dsBaseClient
+    side: client
+    function: ds.list
+    current: x
+    proposed: lst
+    status: proposed
+    rule: classes.list
+    match: alias
+    role: object
+    class: list
+    confidence: high
+    source: rules
+    reason: list object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.lmerSLMA::dataName
+    package: dsBaseClient
+    side: client
+    function: ds.lmerSLMA
+    current: dataName
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::lmerSLMADS2::dataName
+      - dsBase::lmerSLMADS.assign::dataName
+  - id: dsBaseClient::ds.lmerSLMA::REML
+    package: dsBaseClient
+    side: client
+    function: ds.lmerSLMA
+    current: REML
+    proposed: reml
+    status: proposed
+    rule: style
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBase::lmerSLMADS2::REML
+      - dsBase::lmerSLMADS.assign::REML
+  - id: dsBaseClient::ds.lmerSLMA::control_type
+    package: dsBaseClient
+    side: client
+    function: ds.lmerSLMA
+    current: control_type
+    proposed: control.type
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBase::lmerSLMADS2::control_type
+      - dsBase::lmerSLMADS.assign::control_type
+  - id: dsBaseClient::ds.lmerSLMA::control_value
+    package: dsBaseClient
+    side: client
+    function: ds.lmerSLMA
+    current: control_value
+    proposed: control.value
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: medium
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.lmerSLMA::optimizer
+    package: dsBaseClient
+    side: client
+    function: ds.lmerSLMA
+    current: optimizer
+    proposed: model
+    status: proposed
+    rule: classes.model
+    match: rule
+    role: object
+    class: model
+    confidence: high
+    source: rules
+    reason: model object (doc)
+    linked:
+      - dsBase::lmerSLMADS2::optimizer
+      - dsBase::lmerSLMADS.assign::optimizer
+  - id: dsBaseClient::ds.look::toAggregate
+    package: dsBaseClient
+    side: client
+    function: ds.look
+    current: toAggregate
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.ls::search.filter
+    package: dsBaseClient
+    side: client
+    function: ds.ls
+    current: search.filter
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.ls::search.GlobalEnv
+    package: dsBaseClient
+    side: client
+    function: ds.ls
+    current: search.GlobalEnv
+    proposed: search.global.env
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.make::toAssign
+    package: dsBaseClient
+    side: client
+    function: ds.make
+    current: toAssign
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.matrix::mdata
+    package: dsBaseClient
+    side: client
+    function: ds.matrix
+    current: mdata
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.matrix::from
+    package: dsBaseClient
+    side: client
+    function: ds.matrix
+    current: from
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBase::matrixDS::from
+  - id: dsBaseClient::ds.matrixDet::M1
+    package: dsBaseClient
+    side: client
+    function: ds.matrixDet
+    current: M1
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: alias
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBase::matrixDetDS2::M1.name
+  - id: dsBaseClient::ds.matrixDet.report::M1
+    package: dsBaseClient
+    side: client
+    function: ds.matrixDet.report
+    current: M1
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: alias
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBase::matrixDetDS1::M1.name
+  - id: dsBaseClient::ds.matrixDiag::x1
+    package: dsBaseClient
+    side: client
+    function: ds.matrixDiag
+    current: x1
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.matrixDiag::aim
+    package: dsBaseClient
+    side: client
+    function: ds.matrixDiag
+    current: aim
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBase::matrixDiagDS::aim
+  - id: dsBaseClient::ds.matrixDimnames::M1
+    package: dsBaseClient
+    side: client
+    function: ds.matrixDimnames
+    current: M1
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: alias
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBase::matrixDimnamesDS::M1.name
+  - id: dsBaseClient::ds.matrixInvert::M1
+    package: dsBaseClient
+    side: client
+    function: ds.matrixInvert
+    current: M1
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: alias
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBase::matrixInvertDS::M1.name
+  - id: dsBaseClient::ds.matrixMult::M1
+    package: dsBaseClient
+    side: client
+    function: ds.matrixMult
+    current: M1
+    proposed: mat1
+    status: proposed
+    rule: multiple_inputs
+    rule_open: true
+    match: rule
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBase::matrixMultDS::M1.name
+  - id: dsBaseClient::ds.matrixMult::M2
+    package: dsBaseClient
+    side: client
+    function: ds.matrixMult
+    current: M2
+    proposed: mat2
+    status: proposed
+    rule: multiple_inputs
+    rule_open: true
+    match: rule
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBase::matrixMultDS::M2.name
+  - id: dsBaseClient::ds.matrixTranspose::M1
+    package: dsBaseClient
+    side: client
+    function: ds.matrixTranspose
+    current: M1
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: alias
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBase::matrixTransposeDS::M1.name
+  - id: dsBaseClient::ds.mdPattern::x
+    package: dsBaseClient
+    side: client
+    function: ds.mdPattern
+    current: x
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::mdPatternDS::x
+  - id: dsBaseClient::ds.mean::save.mean.Nvalid
+    package: dsBaseClient
+    side: client
+    function: ds.mean
+    current: save.mean.Nvalid
+    proposed: save.mean.nvalid
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.meanByClass::x
+    package: dsBaseClient
+    side: client
+    function: ds.meanByClass
+    current: x
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.meanSdGp::do.checks
+    package: dsBaseClient
+    side: client
+    function: ds.meanSdGp
+    current: do.checks
+    proposed: checks
+    status: proposed
+    rule: roles.checks
+    rule_open: true
+    match: alias
+    role: checks
+    confidence: high
+    source: rules
+    reason: checks (name)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.merge::x.name
+    package: dsBaseClient
+    side: client
+    function: ds.merge
+    current: x.name
+    proposed: df1
+    status: proposed
+    rule: multiple_inputs
+    rule_open: true
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::mergeDS::x.name
+  - id: dsBaseClient::ds.merge::y.name
+    package: dsBaseClient
+    side: client
+    function: ds.merge
+    current: y.name
+    proposed: df2
+    status: proposed
+    rule: multiple_inputs
+    rule_open: true
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::mergeDS::y.name
+  - id: dsBaseClient::ds.merge::suffixes
+    package: dsBaseClient
+    side: client
+    function: ds.merge
+    current: suffixes
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (name/default)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.message::message.obj.name
+    package: dsBaseClient
+    side: client
+    function: ds.message
+    current: message.obj.name
+    proposed: lst
+    status: proposed
+    rule: classes.list
+    match: rule
+    role: object
+    class: list
+    confidence: high
+    source: rules
+    reason: list object (doc)
+    linked:
+      - dsBase::messageDS::message.object.name
+  - id: dsBaseClient::ds.metadata::x
+    package: dsBaseClient
+    side: client
+    function: ds.metadata
+    current: x
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBase::metadataDS::x
+  - id: dsBaseClient::ds.mice::data
+    package: dsBaseClient
+    side: client
+    function: ds.mice
+    current: data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::miceDS::data
+  - id: dsBaseClient::ds.mice::predictorMatrix
+    package: dsBaseClient
+    side: client
+    function: ds.mice
+    current: predictorMatrix
+    proposed: predictor.matrix
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: medium
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - dsBase::miceDS::predictorMatrix
+  - id: dsBaseClient::ds.mice::newobj_mids
+    package: dsBaseClient
+    side: client
+    function: ds.mice
+    current: newobj_mids
+    proposed: ''
+    status: unresolved
+    rule: roles.new_object
+    match: conflict
+    role: new_object
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - dsBase::miceDS::newobj_mids
+    note: '`newobj` is proposed for `newobj_df` too'
+  - id: dsBaseClient::ds.mice::newobj_df
+    package: dsBaseClient
+    side: client
+    function: ds.mice
+    current: newobj_df
+    proposed: ''
+    status: unresolved
+    rule: roles.new_object
+    match: conflict
+    role: new_object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - dsBase::miceDS::newobj_df
+    note: '`newobj` is proposed for `newobj_mids` too'
+  - id: dsBaseClient::ds.names::xname
+    package: dsBaseClient
+    side: client
+    function: ds.names
+    current: xname
+    proposed: lst
+    status: proposed
+    rule: classes.list
+    match: rule
+    role: object
+    class: list
+    confidence: high
+    source: rules
+    reason: list object (doc)
+    linked:
+      - dsBase::namesDS::xname.transmit
+  - id: dsBaseClient::ds.ns::knots
+    package: dsBaseClient
+    side: client
+    function: ds.ns
+    current: knots
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBase::nsDS::knots
+  - id: dsBaseClient::ds.ns::Boundary.knots
+    package: dsBaseClient
+    side: client
+    function: ds.ns
+    current: Boundary.knots
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBase::nsDS::Boundary.knots
+  - id: dsBaseClient::ds.ranksSecure::input.var.name
+    package: dsBaseClient
+    side: client
+    function: ds.ranksSecure
+    current: input.var.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: alias
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::quantileMeanDS::xvect
+      - dsBase::minMaxRandDS::input.var.name
+      - dsBase::blackBoxDS::input.var.name
+  - id: dsBaseClient::ds.ranksSecure::output.ranks.df
+    package: dsBaseClient
+    side: client
+    function: ds.ranksSecure
+    current: output.ranks.df
+    proposed: ''
+    status: unresolved
+    rule: roles.new_object
+    match: conflict
+    role: new_object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - dsBase::ranksSecureDS5::output.ranks.df
+    note: '`newobj` is proposed for `summary.output.ranks.df` too'
+  - id: dsBaseClient::ds.ranksSecure::summary.output.ranks.df
+    package: dsBaseClient
+    side: client
+    function: ds.ranksSecure
+    current: summary.output.ranks.df
+    proposed: ''
+    status: unresolved
+    rule: roles.new_object
+    match: conflict
+    role: new_object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - 'dsBase::::'
+    note: '`newobj` is proposed for `output.ranks.df` too'
+  - id: dsBaseClient::ds.ranksSecure::ranks.sort.by
+    package: dsBaseClient
+    side: client
+    function: ds.ranksSecure
+    current: ranks.sort.by
+    proposed: ''
+    status: unresolved
+    rule: roles.method
+    match: conflict
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBase::ranksSecureDS4::ranks.sort.by
+    note: '`method` is proposed for `NA.manage` too'
+  - id: dsBaseClient::ds.ranksSecure::shared.seed.value
+    package: dsBaseClient
+    side: client
+    function: ds.ranksSecure
+    current: shared.seed.value
+    proposed: seed
+    status: proposed
+    rule: roles.seed
+    match: rule
+    role: seed
+    confidence: high
+    source: rules
+    reason: seed (name)
+    linked:
+      - dsBase::blackBoxDS::shared.seedval
+      - dsBase::blackBoxRanksDS::shared.seedval
+  - id: dsBaseClient::ds.ranksSecure::NA.manage
+    package: dsBaseClient
+    side: client
+    function: ds.ranksSecure
+    current: NA.manage
+    proposed: ''
+    status: unresolved
+    rule: roles.method
+    match: conflict
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBase::blackBoxDS::NA.manage
+    note: '`method` is proposed for `ranks.sort.by` too'
+  - id: dsBaseClient::ds.rbind::DataSHIELD.checks
+    package: dsBaseClient
+    side: client
+    function: ds.rbind
+    current: DataSHIELD.checks
+    proposed: checks
+    status: proposed
+    rule: roles.checks
+    rule_open: true
+    match: alias
+    role: checks
+    confidence: high
+    source: rules
+    reason: checks (name)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.rBinom::seed.as.integer
+    package: dsBaseClient
+    side: client
+    function: ds.rBinom
+    current: seed.as.integer
+    proposed: seed
+    status: proposed
+    rule: roles.seed
+    match: alias
+    role: seed
+    confidence: high
+    source: rules
+    reason: seed (name)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.recodeLevels::newCategories
+    package: dsBaseClient
+    side: client
+    function: ds.recodeLevels
+    current: newCategories
+    proposed: new.categories
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.rep::length.out
+    package: dsBaseClient
+    side: client
+    function: ds.rep
+    current: length.out
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.rep::source.x1
+    package: dsBaseClient
+    side: client
+    function: ds.rep
+    current: source.x1
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBase::repDS::source.x1
+  - id: dsBaseClient::ds.rep::source.times
+    package: dsBaseClient
+    side: client
+    function: ds.rep
+    current: source.times
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBase::repDS::source.times
+  - id: dsBaseClient::ds.rep::source.length.out
+    package: dsBaseClient
+    side: client
+    function: ds.rep
+    current: source.length.out
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBase::repDS::source.length.out
+  - id: dsBaseClient::ds.rep::source.each
+    package: dsBaseClient
+    side: client
+    function: ds.rep
+    current: source.each
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBase::repDS::source.each
+  - id: dsBaseClient::ds.replaceNA::forNA
+    package: dsBaseClient
+    side: client
+    function: ds.replaceNA
+    current: forNA
+    proposed: lst
+    status: proposed
+    rule: classes.list
+    match: rule
+    role: object
+    class: list
+    confidence: high
+    source: rules
+    reason: list object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.reShape::data.name
+    package: dsBaseClient
+    side: client
+    function: ds.reShape
+    current: data.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::reShapeDS::data.name
+  - id: dsBaseClient::ds.reShape::direction
+    package: dsBaseClient
+    side: client
+    function: ds.reShape
+    current: direction
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBase::reShapeDS::direction
+  - id: dsBaseClient::ds.rm::x.names
+    package: dsBaseClient
+    side: client
+    function: ds.rm
+    current: x.names
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.rNorm::seed.as.integer
+    package: dsBaseClient
+    side: client
+    function: ds.rNorm
+    current: seed.as.integer
+    proposed: seed
+    status: proposed
+    rule: roles.seed
+    match: alias
+    role: seed
+    confidence: high
+    source: rules
+    reason: seed (name)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.rowColCalc::x
+    package: dsBaseClient
+    side: client
+    function: ds.rowColCalc
+    current: x
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: rule
+    role: object
+    class: matrix
+    confidence: medium
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBase::dimDS::x
+      - dsBase::colnamesDS::x
+      - dsBase::rowColCalcDS::dataset
+  - id: dsBaseClient::ds.rowColCalc::operation
+    package: dsBaseClient
+    side: client
+    function: ds.rowColCalc
+    current: operation
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.rPois::seed.as.integer
+    package: dsBaseClient
+    side: client
+    function: ds.rPois
+    current: seed.as.integer
+    proposed: seed
+    status: proposed
+    rule: roles.seed
+    match: alias
+    role: seed
+    confidence: high
+    source: rules
+    reason: seed (name)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.rUnif::seed.as.integer
+    package: dsBaseClient
+    side: client
+    function: ds.rUnif
+    current: seed.as.integer
+    proposed: seed
+    status: proposed
+    rule: roles.seed
+    match: alias
+    role: seed
+    confidence: high
+    source: rules
+    reason: seed (name)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.sample::x
+    package: dsBaseClient
+    side: client
+    function: ds.sample
+    current: x
+    proposed: ''
+    status: unresolved
+    rule: roles.new_object
+    match: conflict
+    role: new_object
+    class: vector
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - dsBase::sampleDS::x.transmit
+    note: '`newobj` is proposed for `newobj` too; `newobj` keeps it'
+  - id: dsBaseClient::ds.sample::seed.as.integer
+    package: dsBaseClient
+    side: client
+    function: ds.sample
+    current: seed.as.integer
+    proposed: seed
+    status: proposed
+    rule: roles.seed
+    match: alias
+    role: seed
+    confidence: high
+    source: rules
+    reason: seed (name)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.seq::FROM.value.char
+    package: dsBaseClient
+    side: client
+    function: ds.seq
+    current: FROM.value.char
+    proposed: from.value.char
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: high
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - dsBase::seqDS::FROM.value.char
+  - id: dsBaseClient::ds.seq::BY.value.char
+    package: dsBaseClient
+    side: client
+    function: ds.seq
+    current: BY.value.char
+    proposed: by.value.char
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: high
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - dsBase::seqDS::BY.value.char
+  - id: dsBaseClient::ds.seq::TO.value.char
+    package: dsBaseClient
+    side: client
+    function: ds.seq
+    current: TO.value.char
+    proposed: to.value.char
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: high
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - dsBase::seqDS::TO.value.char
+  - id: dsBaseClient::ds.seq::LENGTH.OUT.value.char
+    package: dsBaseClient
+    side: client
+    function: ds.seq
+    current: LENGTH.OUT.value.char
+    proposed: length.out.value.char
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: high
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - dsBase::seqDS::LENGTH.OUT.value.char
+  - id: dsBaseClient::ds.seq::ALONG.WITH.name
+    package: dsBaseClient
+    side: client
+    function: ds.seq
+    current: ALONG.WITH.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::seqDS::ALONG.WITH.name
+  - id: dsBaseClient::ds.setDefaultOpals::opal.name
+    package: dsBaseClient
+    side: client
+    function: ds.setDefaultOpals
+    current: opal.name
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.setSeed::seed.as.integer
+    package: dsBaseClient
+    side: client
+    function: ds.setSeed
+    current: seed.as.integer
+    proposed: seed
+    status: proposed
+    rule: roles.seed
+    match: alias
+    role: seed
+    confidence: high
+    source: rules
+    reason: seed (name)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.standardiseDf::df.name
+    package: dsBaseClient
+    side: client
+    function: ds.standardiseDf
+    current: df.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::colnamesDS::x
+  - id: dsBaseClient::ds.standardiseDf::fix_class
+    package: dsBaseClient
+    side: client
+    function: ds.standardiseDf
+    current: fix_class
+    proposed: fix.class
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBase::::'
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBaseClient::ds.standardiseDf::fix_levels
+    package: dsBaseClient
+    side: client
+    function: ds.standardiseDf
+    current: fix_levels
+    proposed: fix.levels
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBase::::'
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBaseClient::ds.subset::x
+    package: dsBaseClient
+    side: client
+    function: ds.subset
+    current: x
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::subsetDS::dt
+      - dsBase::lengthDS::x
+  - id: dsBaseClient::ds.subset::completeCases
+    package: dsBaseClient
+    side: client
+    function: ds.subset
+    current: completeCases
+    proposed: complete.cases
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBase::subsetDS::complt
+  - id: dsBaseClient::ds.subset::cols
+    package: dsBaseClient
+    side: client
+    function: ds.subset
+    current: cols
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::subsetDS::cs
+  - id: dsBaseClient::ds.subset::logicalOperator
+    package: dsBaseClient
+    side: client
+    function: ds.subset
+    current: logicalOperator
+    proposed: logical.operator
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBase::subsetDS::lg
+  - id: dsBaseClient::ds.subsetByClass::x
+    package: dsBaseClient
+    side: client
+    function: ds.subsetByClass
+    current: x
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::colnamesDS::x
+      - dsBase::dimDS::x
+  - id: dsBaseClient::ds.subsetByClass::subsets
+    package: dsBaseClient
+    side: client
+    function: ds.subsetByClass
+    current: subsets
+    proposed: newobj
+    status: proposed
+    rule: roles.new_object
+    match: rule
+    role: new_object
+    class: list
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.subsetByClass::variables
+    package: dsBaseClient
+    side: client
+    function: ds.subsetByClass
+    current: variables
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.table::cvar
+    package: dsBaseClient
+    side: client
+    function: ds.table
+    current: cvar
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::asFactorDS1::input.var.name
+  - id: dsBaseClient::ds.table::useNA
+    package: dsBaseClient
+    side: client
+    function: ds.table
+    current: useNA
+    proposed: ''
+    status: unresolved
+    rule: roles.method
+    match: conflict
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - 'dsBase::::'
+    note: '`method` is proposed for `force.nfilter` too'
+  - id: dsBaseClient::ds.table::force.nfilter
+    package: dsBaseClient
+    side: client
+    function: ds.table
+    current: force.nfilter
+    proposed: ''
+    status: unresolved
+    rule: roles.method
+    match: conflict
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - 'dsBase::::'
+    note: '`method` is proposed for `useNA` too'
+  - id: dsBaseClient::ds.table1D::warningMessage
+    package: dsBaseClient
+    side: client
+    function: ds.table1D
+    current: warningMessage
+    proposed: warning.message
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.table2D::warningMessage
+    package: dsBaseClient
+    side: client
+    function: ds.table2D
+    current: warningMessage
+    proposed: warning.message
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::ds.tapply.assign::X.name
+    package: dsBaseClient
+    side: client
+    function: ds.tapply.assign
+    current: X.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::tapplyDS.assign::X.name
+  - id: dsBaseClient::ds.tapply.assign::INDEX.names
+    package: dsBaseClient
+    side: client
+    function: ds.tapply.assign
+    current: INDEX.names
+    proposed: index.names
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBase::::'
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBaseClient::ds.tapply::X.name
+    package: dsBaseClient
+    side: client
+    function: ds.tapply
+    current: X.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::tapplyDS::X.name
+  - id: dsBaseClient::ds.tapply::INDEX.names
+    package: dsBaseClient
+    side: client
+    function: ds.tapply
+    current: INDEX.names
+    proposed: index.names
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: medium
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBase::::'
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBaseClient::ds.testObjExists::test.obj.name
+    package: dsBaseClient
+    side: client
+    function: ds.testObjExists
+    current: test.obj.name
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBase::testObjExistsDS::test.obj.name
+  - id: dsBaseClient::ds.unique::x.name
+    package: dsBaseClient
+    side: client
+    function: ds.unique
+    current: x.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: alias
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBase::uniqueDS::x.name.transmit
+  - id: dsBaseClient::ds.unList::x.name
+    package: dsBaseClient
+    side: client
+    function: ds.unList
+    current: x.name
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBase::unListDS::x.name
+  - id: dsBaseClient::ds.vectorCalc::calc
+    package: dsBaseClient
+    side: client
+    function: ds.vectorCalc
+    current: calc
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::subsetHelper::dts
+    package: dsBaseClient
+    side: client
+    function: subsetHelper
+    current: dts
+    proposed: datasources
+    status: proposed
+    rule: roles.connection
+    match: rule
+    role: connection
+    confidence: high
+    source: rules
+    reason: connection (name/doc)
+    linked:
+      - 'dsBase::::'
+  - id: dsBaseClient::subsetHelper::data
+    package: dsBaseClient
+    side: client
+    function: subsetHelper
+    current: data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBase::dimDS::x
+  - id: dsBase::asCharacterDS::x.name
+    package: dsBase
+    side: server
+    function: asCharacterDS
+    current: x.name
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBaseClient::ds.asCharacter::x.name
+  - id: dsBase::asDataMatrixDS::x.name
+    package: dsBase
+    side: server
+    function: asDataMatrixDS
+    current: x.name
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: rule
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBaseClient::ds.asDataMatrix::x.name
+  - id: dsBase::asFactorDS1::input.var.name
+    package: dsBase
+    side: server
+    function: asFactorDS1
+    current: input.var.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBaseClient::ds.asFactor::input.var.name
+      - dsBaseClient::ds.table::rvar
+      - dsBaseClient::ds.table::cvar
+      - dsBaseClient::ds.table::stvar
+    note: follows client ds.asFactor(input.var.name)
+  - id: dsBase::asFactorDS2::input.var.name
+    package: dsBase
+    side: server
+    function: asFactorDS2
+    current: input.var.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBaseClient::ds.asFactor::input.var.name
+    note: follows client ds.asFactor(input.var.name)
+  - id: dsBase::asFactorDS2::all.unique.levels.transmit
+    package: dsBase
+    side: server
+    function: asFactorDS2
+    current: all.unique.levels.transmit
+    proposed: x.transmit
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::asFactorSimpleDS::input.var.name
+    package: dsBase
+    side: server
+    function: asFactorSimpleDS
+    current: input.var.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBaseClient::ds.asFactorSimple::input.var.name
+    note: follows client ds.asFactorSimple(input.var.name)
+  - id: dsBase::asIntegerDS::x.name
+    package: dsBase
+    side: server
+    function: asIntegerDS
+    current: x.name
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBaseClient::ds.asInteger::x.name
+  - id: dsBase::asListDS::x.name
+    package: dsBase
+    side: server
+    function: asListDS
+    current: x.name
+    proposed: lst
+    status: proposed
+    rule: classes.list
+    match: rule
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBaseClient::ds.asList::x.name
+    note: follows client ds.asList(x.name)
+  - id: dsBase::asLogicalDS::x.name
+    package: dsBase
+    side: server
+    function: asLogicalDS
+    current: x.name
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBaseClient::ds.asLogical::x.name
+  - id: dsBase::asMatrixDS::x.name
+    package: dsBase
+    side: server
+    function: asMatrixDS
+    current: x.name
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: rule
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBaseClient::ds.asMatrix::x.name
+  - id: dsBase::asNumericDS::x.name
+    package: dsBase
+    side: server
+    function: asNumericDS
+    current: x.name
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBaseClient::ds.asNumeric::x.name
+  - id: dsBase::aucDS::pred
+    package: dsBase
+    side: server
+    function: aucDS
+    current: pred
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.auc::pred
+  - id: dsBase::blackBoxDS::input.var.name
+    package: dsBase
+    side: server
+    function: blackBoxDS
+    current: input.var.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: alias
+    role: object
+    class: vector
+    confidence: medium
+    source: rules
+    reason: vector object (from client ds.ranksSecure(input.var.name))
+    linked:
+      - dsBaseClient::ds.ranksSecure::input.var.name
+  - id: dsBase::blackBoxDS::shared.seedval
+    package: dsBase
+    side: server
+    function: blackBoxDS
+    current: shared.seedval
+    proposed: seed
+    status: proposed
+    rule: roles.seed
+    match: alias
+    role: seed
+    confidence: high
+    source: rules
+    reason: seed (name)
+    linked:
+      - dsBaseClient::ds.ranksSecure::shared.seed.value
+  - id: dsBase::blackBoxDS::NA.manage
+    package: dsBase
+    side: server
+    function: blackBoxDS
+    current: NA.manage
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (from client ds.ranksSecure(NA.manage))
+    linked:
+      - dsBaseClient::ds.ranksSecure::NA.manage
+  - id: dsBase::blackBoxRanksDS::input.var.name
+    package: dsBase
+    side: server
+    function: blackBoxRanksDS
+    current: input.var.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: alias
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::blackBoxRanksDS::shared.seedval
+    package: dsBase
+    side: server
+    function: blackBoxRanksDS
+    current: shared.seedval
+    proposed: seed
+    status: proposed
+    rule: roles.seed
+    match: alias
+    role: seed
+    confidence: high
+    source: rules
+    reason: seed (name)
+    linked:
+      - dsBaseClient::ds.ranksSecure::shared.seed.value
+  - id: dsBase::BooleDS::V1.name
+    package: dsBase
+    side: server
+    function: BooleDS
+    current: V1.name
+    proposed: x
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.Boole::V1
+  - id: dsBase::BooleDS::V2.name
+    package: dsBase
+    side: server
+    function: BooleDS
+    current: V2.name
+    proposed: 'y'
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.Boole::V2
+  - id: dsBase::BooleDS::Boolean.operator.n
+    package: dsBase
+    side: server
+    function: BooleDS
+    current: Boolean.operator.n
+    proposed: boolean.operator.n
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: high
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::BooleDS::na.assign.text
+    package: dsBase
+    side: server
+    function: BooleDS
+    current: na.assign.text
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBaseClient::ds.Boole::na.assign
+  - id: dsBase::boxPlotGG_data_TreatmentDS::table
+    package: dsBase
+    side: server
+    function: boxPlotGG_data_TreatmentDS
+    current: table
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::boxPlotGGDS::data_table
+    package: dsBase
+    side: server
+    function: boxPlotGGDS
+    current: data_table
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::cbindDS::x.names.transmit
+    package: dsBase
+    side: server
+    function: cbindDS
+    current: x.names.transmit
+    proposed: x.transmit
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::cDS::objs
+    package: dsBase
+    side: server
+    function: cDS
+    current: objs
+    proposed: lst
+    status: proposed
+    rule: classes.list
+    match: rule
+    role: object
+    class: list
+    confidence: high
+    source: rules
+    reason: list object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::changeRefGroupDS::xvect
+    package: dsBase
+    side: server
+    function: changeRefGroupDS
+    current: xvect
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.changeRefGroup::x
+    note: follows client ds.changeRefGroup(x)
+  - id: dsBase::changeRefGroupDS::ref
+    package: dsBase
+    side: server
+    function: changeRefGroupDS
+    current: ref
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBaseClient::ds.changeRefGroup::ref
+  - id: dsBase::changeRefGroupDS::reorderByRef
+    package: dsBase
+    side: server
+    function: changeRefGroupDS
+    current: reorderByRef
+    proposed: reorder.by.ref
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBaseClient::ds.changeRefGroup::reorderByRef
+  - id: dsBase::colnamesDS::x
+    package: dsBase
+    side: server
+    function: colnamesDS
+    current: x
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.colnames::x
+      - dsBaseClient::ds.dataFrameFill::df.name
+      - dsBaseClient::ds.rowColCalc::x
+      - dsBaseClient::ds.standardiseDf::df.name
+      - dsBaseClient::ds.standardiseDf::newobj
+      - dsBaseClient::ds.subsetByClass::x
+      - dsBaseClient::ds.summary::x
+  - id: dsBase::completeCasesDS::x1.transmit
+    package: dsBase
+    side: server
+    function: completeCasesDS
+    current: x1.transmit
+    proposed: df.transmit
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::corDS::y
+    package: dsBase
+    side: server
+    function: corDS
+    current: 'y'
+    proposed: ''
+    status: unresolved
+    rule: classes.vector
+    match: conflict
+    role: object
+    class: vector
+    confidence: medium
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.cor::y
+    note: '`x` is proposed for `x` too; `x` keeps it'
+  - id: dsBase::covDS::y
+    package: dsBase
+    side: server
+    function: covDS
+    current: 'y'
+    proposed: ''
+    status: unresolved
+    rule: classes.vector
+    match: conflict
+    role: object
+    class: vector
+    confidence: medium
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.cov::y
+    note: '`x` is proposed for `x` too; `x` keeps it'
+  - id: dsBase::covDS::use
+    package: dsBase
+    side: server
+    function: covDS
+    current: use
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBaseClient::ds.cov::naAction
+  - id: dsBase::dataFrameDS::vectors
+    package: dsBase
+    side: server
+    function: dataFrameDS
+    current: vectors
+    proposed: lst
+    status: proposed
+    rule: classes.list
+    match: rule
+    role: object
+    class: list
+    confidence: medium
+    source: rules
+    reason: list object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::dataFrameDS::r.names
+    package: dsBase
+    side: server
+    function: dataFrameDS
+    current: r.names
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::dataFrameDS::strAsFactors
+    package: dsBase
+    side: server
+    function: dataFrameDS
+    current: strAsFactors
+    proposed: strings.as.factors
+    status: proposed
+    rule: style
+    rule_open: true
+    match: rule
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBaseClient::ds.dataFrame::stringsAsFactors
+    note: follows client ds.dataFrame(stringsAsFactors)
+  - id: dsBase::dataFrameDS::completeCases
+    package: dsBase
+    side: server
+    function: dataFrameDS
+    current: completeCases
+    proposed: complete.cases
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBaseClient::ds.dataFrame::completeCases
+  - id: dsBase::dataFrameFillDS::df.name
+    package: dsBase
+    side: server
+    function: dataFrameFillDS
+    current: df.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.dataFrameFill::df.name
+  - id: dsBase::dataFrameFillDS::allNames.transmit
+    package: dsBase
+    side: server
+    function: dataFrameFillDS
+    current: allNames.transmit
+    proposed: all.names.transmit
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBase::dataFrameSortDS::df.name
+    package: dsBase
+    side: server
+    function: dataFrameSortDS
+    current: df.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.dataFrameSort::df.name
+  - id: dsBase::dataFrameSortDS::sort.key.name
+    package: dsBase
+    side: server
+    function: dataFrameSortDS
+    current: sort.key.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.dataFrameSort::sort.key.name
+  - id: dsBase::dataFrameSortDS::sort.method
+    package: dsBase
+    side: server
+    function: dataFrameSortDS
+    current: sort.method
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (from client ds.dataFrameSort(sort.method))
+    linked:
+      - dsBaseClient::ds.dataFrameSort::sort.method
+  - id: dsBase::dataFrameSubsetDS1::df.name
+    package: dsBase
+    side: server
+    function: dataFrameSubsetDS1
+    current: df.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.dataFrameSubset::df.name
+  - id: dsBase::dataFrameSubsetDS1::V1.name
+    package: dsBase
+    side: server
+    function: dataFrameSubsetDS1
+    current: V1.name
+    proposed: x
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.dataFrameSubset::V1.name
+  - id: dsBase::dataFrameSubsetDS1::V2.name
+    package: dsBase
+    side: server
+    function: dataFrameSubsetDS1
+    current: V2.name
+    proposed: 'y'
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.dataFrameSubset::V2.name
+  - id: dsBase::dataFrameSubsetDS1::Boolean.operator.n
+    package: dsBase
+    side: server
+    function: dataFrameSubsetDS1
+    current: Boolean.operator.n
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::dataFrameSubsetDS1::keep.NAs
+    package: dsBase
+    side: server
+    function: dataFrameSubsetDS1
+    current: keep.NAs
+    proposed: keep.nas
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBaseClient::ds.dataFrameSubset::keep.NAs
+  - id: dsBase::dataFrameSubsetDS2::df.name
+    package: dsBase
+    side: server
+    function: dataFrameSubsetDS2
+    current: df.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.dataFrameSubset::df.name
+  - id: dsBase::dataFrameSubsetDS2::V1.name
+    package: dsBase
+    side: server
+    function: dataFrameSubsetDS2
+    current: V1.name
+    proposed: x
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.dataFrameSubset::V1.name
+  - id: dsBase::dataFrameSubsetDS2::V2.name
+    package: dsBase
+    side: server
+    function: dataFrameSubsetDS2
+    current: V2.name
+    proposed: 'y'
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.dataFrameSubset::V2.name
+  - id: dsBase::dataFrameSubsetDS2::Boolean.operator.n
+    package: dsBase
+    side: server
+    function: dataFrameSubsetDS2
+    current: Boolean.operator.n
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::dataFrameSubsetDS2::keep.NAs
+    package: dsBase
+    side: server
+    function: dataFrameSubsetDS2
+    current: keep.NAs
+    proposed: keep.nas
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBaseClient::ds.dataFrameSubset::keep.NAs
+  - id: dsBase::densityGridDS::xvect
+    package: dsBase
+    side: server
+    function: densityGridDS
+    current: xvect
+    proposed: x
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.contourPlot::x
+      - dsBaseClient::ds.densityGrid::x
+      - dsBaseClient::ds.heatmapPlot::x
+    note: follows client ds.contourPlot(x)
+  - id: dsBase::densityGridDS::yvect
+    package: dsBase
+    side: server
+    function: densityGridDS
+    current: yvect
+    proposed: 'y'
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.contourPlot::y
+      - dsBaseClient::ds.densityGrid::y
+      - dsBaseClient::ds.heatmapPlot::y
+    note: follows client ds.contourPlot(y)
+  - id: dsBase::dimDS::x
+    package: dsBase
+    side: server
+    function: dimDS
+    current: x
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.dim::x
+      - dsBaseClient::ds.rowColCalc::x
+      - dsBaseClient::ds.subsetByClass::x
+      - dsBaseClient::ds.summary::x
+      - dsBaseClient::subsetHelper::data
+    note: 'client callers differ: ds.rowColCalc(x -> mat), ds.subsetByClass(x -> df),
+      ds.summary(x -> x), subsetHelper(data -> df)'
+  - id: dsBase::dmtC2SDS::dfdata.mat.transmit
+    package: dsBase
+    side: server
+    function: dmtC2SDS
+    current: dfdata.mat.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::dmtC2SDS::inout.object.transmit
+    package: dsBase
+    side: server
+    function: dmtC2SDS
+    current: inout.object.transmit
+    proposed: method.transmit
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::dmtC2SDS::from
+    package: dsBase
+    side: server
+    function: dmtC2SDS
+    current: from
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::dmtC2SDS::nrows.transmit
+    package: dsBase
+    side: server
+    function: dmtC2SDS
+    current: nrows.transmit
+    proposed: mat.transmit
+    status: proposed
+    rule: classes.matrix
+    match: rule
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::extractQuantilesDS1::extract.quantiles
+    package: dsBase
+    side: server
+    function: extractQuantilesDS1
+    current: extract.quantiles
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::extractQuantilesDS1::extract.summary.output.ranks.df
+    package: dsBase
+    side: server
+    function: extractQuantilesDS1
+    current: extract.summary.output.ranks.df
+    proposed: newobj
+    status: proposed
+    rule: roles.new_object
+    match: rule
+    role: new_object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::extractQuantilesDS2::extract.summary.output.ranks.df
+    package: dsBase
+    side: server
+    function: extractQuantilesDS2
+    current: extract.summary.output.ranks.df
+    proposed: newobj
+    status: proposed
+    rule: roles.new_object
+    match: rule
+    role: new_object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::gamlssDS::data
+    package: dsBase
+    side: server
+    function: gamlssDS
+    current: data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.gamlss::data
+  - id: dsBase::gamlssDS::xvar
+    package: dsBase
+    side: server
+    function: gamlssDS
+    current: xvar
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.gamlss::xvar
+  - id: dsBase::getWGSRDS::sex
+    package: dsBase
+    side: server
+    function: getWGSRDS
+    current: sex
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.getWGSR::sex
+  - id: dsBase::getWGSRDS::firstPart
+    package: dsBase
+    side: server
+    function: getWGSRDS
+    current: firstPart
+    proposed: first.part
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBaseClient::ds.getWGSR::firstPart
+  - id: dsBase::getWGSRDS::secondPart
+    package: dsBase
+    side: server
+    function: getWGSRDS
+    current: secondPart
+    proposed: second.part
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBaseClient::ds.getWGSR::secondPart
+  - id: dsBase::getWGSRDS::index
+    package: dsBase
+    side: server
+    function: getWGSRDS
+    current: index
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBaseClient::ds.getWGSR::index
+  - id: dsBase::getWGSRDS::standing
+    package: dsBase
+    side: server
+    function: getWGSRDS
+    current: standing
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBaseClient::ds.getWGSR::standing
+  - id: dsBase::getWGSRDS::thirdPart
+    package: dsBase
+    side: server
+    function: getWGSRDS
+    current: thirdPart
+    proposed: third.part
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBaseClient::ds.getWGSR::thirdPart
+  - id: dsBase::glmDS1::data
+    package: dsBase
+    side: server
+    function: glmDS1
+    current: data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.glm::data
+  - id: dsBase::glmDS2::dataName
+    package: dsBase
+    side: server
+    function: glmDS2
+    current: dataName
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.glm::data
+  - id: dsBase::glmerSLMADS.assign::dataName
+    package: dsBase
+    side: server
+    function: glmerSLMADS.assign
+    current: dataName
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (from client ds.glmerSLMA(dataName))
+    linked:
+      - dsBaseClient::ds.glmerSLMA::dataName
+  - id: dsBase::glmerSLMADS.assign::control_type
+    package: dsBase
+    side: server
+    function: glmerSLMADS.assign
+    current: control_type
+    proposed: control.type
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (from client ds.glmerSLMA(control_type))
+    linked:
+      - dsBaseClient::ds.glmerSLMA::control_type
+  - id: dsBase::glmerSLMADS.assign::control_value.transmit
+    package: dsBase
+    side: server
+    function: glmerSLMADS.assign
+    current: control_value.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::glmerSLMADS.assign::nAGQ
+    package: dsBase
+    side: server
+    function: glmerSLMADS.assign
+    current: nAGQ
+    proposed: n.agq
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: high
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - dsBaseClient::ds.glmerSLMA::nAGQ
+  - id: dsBase::glmerSLMADS.assign::theta
+    package: dsBase
+    side: server
+    function: glmerSLMADS.assign
+    current: theta
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::glmerSLMADS.assign::fixef
+    package: dsBase
+    side: server
+    function: glmerSLMADS.assign
+    current: fixef
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::glmerSLMADS2::dataName
+    package: dsBase
+    side: server
+    function: glmerSLMADS2
+    current: dataName
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (from client ds.glmerSLMA(dataName))
+    linked:
+      - dsBaseClient::ds.glmerSLMA::dataName
+  - id: dsBase::glmerSLMADS2::control_type
+    package: dsBase
+    side: server
+    function: glmerSLMADS2
+    current: control_type
+    proposed: control.type
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (from client ds.glmerSLMA(control_type))
+    linked:
+      - dsBaseClient::ds.glmerSLMA::control_type
+  - id: dsBase::glmerSLMADS2::control_value.transmit
+    package: dsBase
+    side: server
+    function: glmerSLMADS2
+    current: control_value.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::glmerSLMADS2::nAGQ
+    package: dsBase
+    side: server
+    function: glmerSLMADS2
+    current: nAGQ
+    proposed: n.agq
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: high
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - dsBaseClient::ds.glmerSLMA::nAGQ
+  - id: dsBase::glmerSLMADS2::theta
+    package: dsBase
+    side: server
+    function: glmerSLMADS2
+    current: theta
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::glmerSLMADS2::fixef
+    package: dsBase
+    side: server
+    function: glmerSLMADS2
+    current: fixef
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::glmPredictDS.ag::newdataname.transmit
+    package: dsBase
+    side: server
+    function: glmPredictDS.ag
+    current: newdataname.transmit
+    proposed: df.transmit
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.glmPredict::newdataname
+  - id: dsBase::glmPredictDS.ag::output.type
+    package: dsBase
+    side: server
+    function: glmPredictDS.ag
+    current: output.type
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBaseClient::ds.glmPredict::output.type
+  - id: dsBase::glmPredictDS.as::newdataname.transmit
+    package: dsBase
+    side: server
+    function: glmPredictDS.as
+    current: newdataname.transmit
+    proposed: df.transmit
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.glmPredict::newdataname
+  - id: dsBase::glmPredictDS.as::output.type
+    package: dsBase
+    side: server
+    function: glmPredictDS.as
+    current: output.type
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBaseClient::ds.glmPredict::output.type
+  - id: dsBase::glmSLMADS.assign::offsetName
+    package: dsBase
+    side: server
+    function: glmSLMADS.assign
+    current: offsetName
+    proposed: offset.name
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.glmSLMA::offset
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBase::glmSLMADS.assign::weightsName
+    package: dsBase
+    side: server
+    function: glmSLMADS.assign
+    current: weightsName
+    proposed: weights.name
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.glmSLMA::weights
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBase::glmSLMADS.assign::dataName
+    package: dsBase
+    side: server
+    function: glmSLMADS.assign
+    current: dataName
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.glmSLMA::dataName
+  - id: dsBase::glmSLMADS1::data
+    package: dsBase
+    side: server
+    function: glmSLMADS1
+    current: data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.glmSLMA::dataName
+  - id: dsBase::glmSLMADS2::dataName
+    package: dsBase
+    side: server
+    function: glmSLMADS2
+    current: dataName
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.glmSLMA::dataName
+  - id: dsBase::glmSummaryDS.ag::x.transmit
+    package: dsBase
+    side: server
+    function: glmSummaryDS.ag
+    current: x.transmit
+    proposed: model.transmit
+    status: proposed
+    rule: classes.model
+    match: rule
+    role: object
+    class: model
+    confidence: high
+    source: rules
+    reason: model object (doc)
+    linked:
+      - dsBaseClient::ds.glmSummary::x.name
+  - id: dsBase::glmSummaryDS.as::x.transmit
+    package: dsBase
+    side: server
+    function: glmSummaryDS.as
+    current: x.transmit
+    proposed: model.transmit
+    status: proposed
+    rule: classes.model
+    match: rule
+    role: object
+    class: model
+    confidence: high
+    source: rules
+    reason: model object (doc)
+    linked:
+      - dsBaseClient::ds.glmSummary::x.name
+  - id: dsBase::hetcorDS::data
+    package: dsBase
+    side: server
+    function: hetcorDS
+    current: data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.hetcor::data
+  - id: dsBase::hetcorDS::ML
+    package: dsBase
+    side: server
+    function: hetcorDS
+    current: ML
+    proposed: ml
+    status: proposed
+    rule: style
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBaseClient::ds.hetcor::ML
+  - id: dsBase::hetcorDS::use
+    package: dsBase
+    side: server
+    function: hetcorDS
+    current: use
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.hetcor::use
+  - id: dsBase::histogramDS1::xvect
+    package: dsBase
+    side: server
+    function: histogramDS1
+    current: xvect
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.histogram::x
+    note: follows client ds.histogram(x)
+  - id: dsBase::histogramDS2::xvect
+    package: dsBase
+    side: server
+    function: histogramDS2
+    current: xvect
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.histogram::x
+    note: follows client ds.histogram(x)
+  - id: dsBase::igb_standardsDS::var
+    package: dsBase
+    side: server
+    function: igb_standardsDS
+    current: var
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: alias
+    role: object
+    class: vector
+    confidence: low
+    source: rules
+    reason: vector object (name only)
+    linked:
+      - dsBaseClient::ds.igb_standards::var
+  - id: dsBase::isNaDS::xvect
+    package: dsBase
+    side: server
+    function: isNaDS
+    current: xvect
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.isNA::x
+    note: follows client ds.isNA(x)
+  - id: dsBase::isValidDS::obj
+    package: dsBase
+    side: server
+    function: isValidDS
+    current: obj
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.isValid::x
+      - dsBaseClient::ds.summary::x
+    note: follows client ds.isValid(x)
+  - id: dsBase::lexisDS1::exitCol
+    package: dsBase
+    side: server
+    function: lexisDS1
+    current: exitCol
+    proposed: exit.col
+    status: proposed
+    rule: style
+    rule_open: true
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.lexis::exitCol
+    note: follows client ds.lexis(exitCol)
+  - id: dsBase::lexisDS2::datatext
+    package: dsBase
+    side: server
+    function: lexisDS2
+    current: datatext
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.lexis::data
+  - id: dsBase::lexisDS2::intervalWidth
+    package: dsBase
+    side: server
+    function: lexisDS2
+    current: intervalWidth
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::lexisDS2::idCol
+    package: dsBase
+    side: server
+    function: lexisDS2
+    current: idCol
+    proposed: id.col
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.lexis::idCol
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBase::lexisDS2::entryCol
+    package: dsBase
+    side: server
+    function: lexisDS2
+    current: entryCol
+    proposed: entry.col
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.lexis::entryCol
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBase::lexisDS2::exitCol
+    package: dsBase
+    side: server
+    function: lexisDS2
+    current: exitCol
+    proposed: exit.col
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.lexis::exitCol
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBase::lexisDS2::statusCol
+    package: dsBase
+    side: server
+    function: lexisDS2
+    current: statusCol
+    proposed: status.col
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.lexis::statusCol
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBase::lexisDS2::vartext
+    package: dsBase
+    side: server
+    function: lexisDS2
+    current: vartext
+    proposed: variables
+    status: proposed
+    rule: style
+    match: rule
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBaseClient::ds.lexis::variables
+    note: follows client ds.lexis(variables)
+  - id: dsBase::lmerSLMADS.assign::dataName
+    package: dsBase
+    side: server
+    function: lmerSLMADS.assign
+    current: dataName
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (from client ds.lmerSLMA(dataName))
+    linked:
+      - dsBaseClient::ds.lmerSLMA::dataName
+  - id: dsBase::lmerSLMADS.assign::REML
+    package: dsBase
+    side: server
+    function: lmerSLMADS.assign
+    current: REML
+    proposed: reml
+    status: proposed
+    rule: style
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBaseClient::ds.lmerSLMA::REML
+  - id: dsBase::lmerSLMADS.assign::control_type
+    package: dsBase
+    side: server
+    function: lmerSLMADS.assign
+    current: control_type
+    proposed: control.type
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (from client ds.lmerSLMA(control_type))
+    linked:
+      - dsBaseClient::ds.lmerSLMA::control_type
+  - id: dsBase::lmerSLMADS.assign::control_value.transmit
+    package: dsBase
+    side: server
+    function: lmerSLMADS.assign
+    current: control_value.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::lmerSLMADS.assign::optimizer
+    package: dsBase
+    side: server
+    function: lmerSLMADS.assign
+    current: optimizer
+    proposed: model
+    status: proposed
+    rule: classes.model
+    match: rule
+    role: object
+    class: model
+    confidence: medium
+    source: rules
+    reason: model object (from client ds.lmerSLMA(optimizer))
+    linked:
+      - dsBaseClient::ds.lmerSLMA::optimizer
+  - id: dsBase::lmerSLMADS2::dataName
+    package: dsBase
+    side: server
+    function: lmerSLMADS2
+    current: dataName
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (from client ds.lmerSLMA(dataName))
+    linked:
+      - dsBaseClient::ds.lmerSLMA::dataName
+  - id: dsBase::lmerSLMADS2::REML
+    package: dsBase
+    side: server
+    function: lmerSLMADS2
+    current: REML
+    proposed: reml
+    status: proposed
+    rule: style
+    match: style
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBaseClient::ds.lmerSLMA::REML
+  - id: dsBase::lmerSLMADS2::control_type
+    package: dsBase
+    side: server
+    function: lmerSLMADS2
+    current: control_type
+    proposed: control.type
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (from client ds.lmerSLMA(control_type))
+    linked:
+      - dsBaseClient::ds.lmerSLMA::control_type
+  - id: dsBase::lmerSLMADS2::control_value.transmit
+    package: dsBase
+    side: server
+    function: lmerSLMADS2
+    current: control_value.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::lmerSLMADS2::optimizer
+    package: dsBase
+    side: server
+    function: lmerSLMADS2
+    current: optimizer
+    proposed: model
+    status: proposed
+    rule: classes.model
+    match: rule
+    role: object
+    class: model
+    confidence: medium
+    source: rules
+    reason: model object (from client ds.lmerSLMA(optimizer))
+    linked:
+      - dsBaseClient::ds.lmerSLMA::optimizer
+  - id: dsBase::lsDS::search.filter
+    package: dsBase
+    side: server
+    function: lsDS
+    current: search.filter
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::matrixDetDS1::M1.name
+    package: dsBase
+    side: server
+    function: matrixDetDS1
+    current: M1.name
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: alias
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBaseClient::ds.matrixDet.report::M1
+  - id: dsBase::matrixDetDS2::M1.name
+    package: dsBase
+    side: server
+    function: matrixDetDS2
+    current: M1.name
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: alias
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBaseClient::ds.matrixDet::M1
+  - id: dsBase::matrixDiagDS::x1.transmit
+    package: dsBase
+    side: server
+    function: matrixDiagDS
+    current: x1.transmit
+    proposed: mat.transmit
+    status: proposed
+    rule: classes.matrix
+    match: rule
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::matrixDiagDS::aim
+    package: dsBase
+    side: server
+    function: matrixDiagDS
+    current: aim
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (from client ds.matrixDiag(aim))
+    linked:
+      - dsBaseClient::ds.matrixDiag::aim
+  - id: dsBase::matrixDiagDS::nrows.transmit
+    package: dsBase
+    side: server
+    function: matrixDiagDS
+    current: nrows.transmit
+    proposed: x.transmit
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::matrixDimnamesDS::M1.name
+    package: dsBase
+    side: server
+    function: matrixDimnamesDS
+    current: M1.name
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: alias
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBaseClient::ds.matrixDimnames::M1
+  - id: dsBase::matrixDS::from
+    package: dsBase
+    side: server
+    function: matrixDS
+    current: from
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBaseClient::ds.matrix::from
+    note: follows client ds.matrix(from)
+  - id: dsBase::matrixDS::ncols.transmit
+    package: dsBase
+    side: server
+    function: matrixDS
+    current: ncols.transmit
+    proposed: x.transmit
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::matrixInvertDS::M1.name
+    package: dsBase
+    side: server
+    function: matrixInvertDS
+    current: M1.name
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: alias
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBaseClient::ds.matrixInvert::M1
+  - id: dsBase::matrixMultDS::M1.name
+    package: dsBase
+    side: server
+    function: matrixMultDS
+    current: M1.name
+    proposed: mat1
+    status: proposed
+    rule: multiple_inputs
+    rule_open: true
+    match: rule
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBaseClient::ds.matrixMult::M1
+  - id: dsBase::matrixMultDS::M2.name
+    package: dsBase
+    side: server
+    function: matrixMultDS
+    current: M2.name
+    proposed: mat2
+    status: proposed
+    rule: multiple_inputs
+    rule_open: true
+    match: rule
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBaseClient::ds.matrixMult::M2
+  - id: dsBase::matrixTransposeDS::M1.name
+    package: dsBase
+    side: server
+    function: matrixTransposeDS
+    current: M1.name
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: alias
+    role: object
+    class: matrix
+    confidence: high
+    source: rules
+    reason: matrix object (doc)
+    linked:
+      - dsBaseClient::ds.matrixTranspose::M1
+  - id: dsBase::mdPatternDS::x
+    package: dsBase
+    side: server
+    function: mdPatternDS
+    current: x
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.mdPattern::x
+  - id: dsBase::meanDS::xvect
+    package: dsBase
+    side: server
+    function: meanDS
+    current: xvect
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.mean::x
+    note: follows client ds.mean(x)
+  - id: dsBase::meanSdGpDS::X
+    package: dsBase
+    side: server
+    function: meanSdGpDS
+    current: X
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.meanSdGp::x
+  - id: dsBase::meanSdGpDS::INDEX
+    package: dsBase
+    side: server
+    function: meanSdGpDS
+    current: INDEX
+    proposed: 'y'
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.meanSdGp::y
+    note: follows client ds.meanSdGp(y)
+  - id: dsBase::mergeDS::x.name
+    package: dsBase
+    side: server
+    function: mergeDS
+    current: x.name
+    proposed: df1
+    status: proposed
+    rule: multiple_inputs
+    rule_open: true
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.merge::x.name
+  - id: dsBase::mergeDS::y.name
+    package: dsBase
+    side: server
+    function: mergeDS
+    current: y.name
+    proposed: df2
+    status: proposed
+    rule: multiple_inputs
+    rule_open: true
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.merge::y.name
+  - id: dsBase::messageDS::message.object.name
+    package: dsBase
+    side: server
+    function: messageDS
+    current: message.object.name
+    proposed: lst
+    status: proposed
+    rule: classes.list
+    match: rule
+    role: object
+    class: list
+    confidence: high
+    source: rules
+    reason: list object (doc)
+    linked:
+      - dsBaseClient::ds.message::message.obj.name
+  - id: dsBase::miceDS::data
+    package: dsBase
+    side: server
+    function: miceDS
+    current: data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.mice::data
+  - id: dsBase::miceDS::predictorMatrix
+    package: dsBase
+    side: server
+    function: miceDS
+    current: predictorMatrix
+    proposed: predictor.matrix
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: medium
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - dsBaseClient::ds.mice::predictorMatrix
+  - id: dsBase::miceDS::newobj_mids
+    package: dsBase
+    side: server
+    function: miceDS
+    current: newobj_mids
+    proposed: ''
+    status: unresolved
+    rule: roles.new_object
+    match: conflict
+    role: new_object
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - dsBaseClient::ds.mice::newobj_mids
+    note: '`newobj` is proposed for `newobj_df` too'
+  - id: dsBase::miceDS::newobj_df
+    package: dsBase
+    side: server
+    function: miceDS
+    current: newobj_df
+    proposed: ''
+    status: unresolved
+    rule: roles.new_object
+    match: conflict
+    role: new_object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - dsBaseClient::ds.mice::newobj_df
+    note: '`newobj` is proposed for `newobj_mids` too'
+  - id: dsBase::minMaxRandDS::input.var.name
+    package: dsBase
+    side: server
+    function: minMaxRandDS
+    current: input.var.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: alias
+    role: object
+    class: vector
+    confidence: medium
+    source: rules
+    reason: vector object (from client ds.ranksSecure(input.var.name))
+    linked:
+      - dsBaseClient::ds.ranksSecure::input.var.name
+  - id: dsBase::namesDS::xname.transmit
+    package: dsBase
+    side: server
+    function: namesDS
+    current: xname.transmit
+    proposed: lst.transmit
+    status: proposed
+    rule: classes.list
+    match: rule
+    role: object
+    class: list
+    confidence: high
+    source: rules
+    reason: list object (doc)
+    linked:
+      - dsBaseClient::ds.names::xname
+      - dsBaseClient::ds.summary::x
+  - id: dsBase::nsDS::knots
+    package: dsBase
+    side: server
+    function: nsDS
+    current: knots
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBaseClient::ds.ns::knots
+  - id: dsBase::nsDS::Boundary.knots
+    package: dsBase
+    side: server
+    function: nsDS
+    current: Boundary.knots
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBaseClient::ds.ns::Boundary.knots
+  - id: dsBase::numNaDS::xvect
+    package: dsBase
+    side: server
+    function: numNaDS
+    current: xvect
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.numNA::x
+      - dsBaseClient::ds.quantileMean::x
+      - dsBaseClient::ds.replaceNA::x
+    note: follows client ds.numNA(x)
+  - id: dsBase::quantileMeanDS::xvect
+    package: dsBase
+    side: server
+    function: quantileMeanDS
+    current: xvect
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.quantileMean::x
+      - dsBaseClient::ds.ranksSecure::input.var.name
+      - dsBaseClient::ds.summary::x
+    note: follows client ds.quantileMean(x)
+  - id: dsBase::ranksSecureDS4::ranks.sort.by
+    package: dsBase
+    side: server
+    function: ranksSecureDS4
+    current: ranks.sort.by
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBaseClient::ds.ranksSecure::ranks.sort.by
+  - id: dsBase::ranksSecureDS5::output.ranks.df
+    package: dsBase
+    side: server
+    function: ranksSecureDS5
+    current: output.ranks.df
+    proposed: newobj
+    status: proposed
+    rule: roles.new_object
+    match: rule
+    role: new_object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - dsBaseClient::ds.ranksSecure::output.ranks.df
+  - id: dsBase::rbindDS::x.names.transmit
+    package: dsBase
+    side: server
+    function: rbindDS
+    current: x.names.transmit
+    proposed: x.transmit
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::recodeValuesDS::var.name.text
+    package: dsBase
+    side: server
+    function: recodeValuesDS
+    current: var.name.text
+    proposed: var.name
+    status: proposed
+    rule: style
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.recodeValues::var.name
+    note: follows client ds.recodeValues(var.name)
+  - id: dsBase::repDS::source.x1
+    package: dsBase
+    side: server
+    function: repDS
+    current: source.x1
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBaseClient::ds.rep::source.x1
+  - id: dsBase::repDS::source.times
+    package: dsBase
+    side: server
+    function: repDS
+    current: source.times
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBaseClient::ds.rep::source.times
+  - id: dsBase::repDS::source.length.out
+    package: dsBase
+    side: server
+    function: repDS
+    current: source.length.out
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBaseClient::ds.rep::source.length.out
+  - id: dsBase::repDS::source.each
+    package: dsBase
+    side: server
+    function: repDS
+    current: source.each
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - dsBaseClient::ds.rep::source.each
+  - id: dsBase::replaceNaDS::xvect
+    package: dsBase
+    side: server
+    function: replaceNaDS
+    current: xvect
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: alias
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.replaceNA::x
+  - id: dsBase::reShapeDS::data.name
+    package: dsBase
+    side: server
+    function: reShapeDS
+    current: data.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.reShape::data.name
+  - id: dsBase::reShapeDS::direction
+    package: dsBase
+    side: server
+    function: reShapeDS
+    current: direction
+    proposed: method
+    status: proposed
+    rule: roles.method
+    match: rule
+    role: method
+    confidence: medium
+    source: rules
+    reason: method (doc lists options)
+    linked:
+      - dsBaseClient::ds.reShape::direction
+  - id: dsBase::rmDS::x.names.transmit
+    package: dsBase
+    side: server
+    function: rmDS
+    current: x.names.transmit
+    proposed: newobj.transmit
+    status: proposed
+    rule: roles.new_object
+    match: rule
+    role: object
+    class: list
+    confidence: high
+    source: rules
+    reason: list object (doc)
+    linked:
+      - dsBaseClient::ds.standardiseDf::newobj
+    note: follows client ds.standardiseDf(newobj)
+  - id: dsBase::rowColCalcDS::dataset
+    package: dsBase
+    side: server
+    function: rowColCalcDS
+    current: dataset
+    proposed: mat
+    status: proposed
+    rule: classes.matrix
+    match: rule
+    role: object
+    class: matrix
+    confidence: medium
+    source: rules
+    reason: matrix object (from client ds.rowColCalc(x))
+    linked:
+      - dsBaseClient::ds.rowColCalc::x
+  - id: dsBase::sampleDS::x.transmit
+    package: dsBase
+    side: server
+    function: sampleDS
+    current: x.transmit
+    proposed: newobj.transmit
+    status: proposed
+    rule: roles.new_object
+    match: rule
+    role: new_object
+    class: vector
+    confidence: medium
+    source: rules
+    reason: new object (doc)
+    linked:
+      - dsBaseClient::ds.sample::x
+  - id: dsBase::seqDS::FROM.value.char
+    package: dsBase
+    side: server
+    function: seqDS
+    current: FROM.value.char
+    proposed: from.value.char
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: medium
+    source: rules
+    reason: numeric value (from client ds.seq(FROM.value.char))
+    linked:
+      - dsBaseClient::ds.seq::FROM.value.char
+  - id: dsBase::seqDS::TO.value.char
+    package: dsBase
+    side: server
+    function: seqDS
+    current: TO.value.char
+    proposed: to.value.char
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: medium
+    source: rules
+    reason: numeric value (from client ds.seq(TO.value.char))
+    linked:
+      - dsBaseClient::ds.seq::TO.value.char
+  - id: dsBase::seqDS::BY.value.char
+    package: dsBase
+    side: server
+    function: seqDS
+    current: BY.value.char
+    proposed: by.value.char
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.seq::BY.value.char
+  - id: dsBase::seqDS::LENGTH.OUT.value.char
+    package: dsBase
+    side: server
+    function: seqDS
+    current: LENGTH.OUT.value.char
+    proposed: length.out.value.char
+    status: proposed
+    rule: style
+    rule_open: true
+    match: style
+    role: value
+    class: numeric
+    confidence: high
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - dsBaseClient::ds.seq::LENGTH.OUT.value.char
+  - id: dsBase::seqDS::ALONG.WITH.name
+    package: dsBase
+    side: server
+    function: seqDS
+    current: ALONG.WITH.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: column
+    confidence: medium
+    source: rules
+    reason: column (doc)
+    linked:
+      - dsBaseClient::ds.seq::ALONG.WITH.name
+    note: follows client ds.seq(ALONG.WITH.name)
+  - id: dsBase::setSeedDS::seedtext
+    package: dsBase
+    side: server
+    function: setSeedDS
+    current: seedtext
+    proposed: seed
+    status: proposed
+    rule: roles.seed
+    match: alias
+    role: seed
+    confidence: high
+    source: rules
+    reason: seed (name)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::getClassAllColsDS::df.name
+    package: dsBase
+    side: server
+    function: getClassAllColsDS
+    current: df.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::fixClassDS::df.name
+    package: dsBase
+    side: server
+    function: fixClassDS
+    current: df.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::fixClassDS::target_vars
+    package: dsBase
+    side: server
+    function: fixClassDS
+    current: target_vars
+    proposed: target.vars
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBase::fixClassDS::target_class
+    package: dsBase
+    side: server
+    function: fixClassDS
+    current: target_class
+    proposed: target.class
+    status: proposed
+    rule: style
+    match: style
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+    note: 'descriptive name kept: several vector inputs'
+  - id: dsBase::fixColsDS::.data
+    package: dsBase
+    side: server
+    function: fixColsDS
+    current: .data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::fixColsDS::cols
+    package: dsBase
+    side: server
+    function: fixColsDS
+    current: cols
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::getAllLevelsDS::df.name
+    package: dsBase
+    side: server
+    function: getAllLevelsDS
+    current: df.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::getAllLevelsDS::factor_vars
+    package: dsBase
+    side: server
+    function: getAllLevelsDS
+    current: factor_vars
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::fixLevelsDS::df.name
+    package: dsBase
+    side: server
+    function: fixLevelsDS
+    current: df.name
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: alias
+    role: object
+    class: data.frame
+    confidence: high
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::fixLevelsDS::vars
+    package: dsBase
+    side: server
+    function: fixLevelsDS
+    current: vars
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::fixLevelsDS::levels
+    package: dsBase
+    side: server
+    function: fixLevelsDS
+    current: levels
+    proposed: lst
+    status: proposed
+    rule: classes.list
+    match: rule
+    role: object
+    class: list
+    confidence: medium
+    source: rules
+    reason: list object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::subsetByClassDS::data
+    package: dsBase
+    side: server
+    function: subsetByClassDS
+    current: data
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::subsetByClassDS::variables
+    package: dsBase
+    side: server
+    function: subsetByClassDS
+    current: variables
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::subsetDS::dt
+    package: dsBase
+    side: server
+    function: subsetDS
+    current: dt
+    proposed: df
+    status: proposed
+    rule: classes.data.frame
+    match: rule
+    role: object
+    class: data.frame
+    confidence: medium
+    source: rules
+    reason: data.frame object (doc)
+    linked:
+      - dsBaseClient::ds.subset::x
+  - id: dsBase::subsetDS::complt
+    package: dsBase
+    side: server
+    function: subsetDS
+    current: complt
+    proposed: complete.cases
+    status: proposed
+    rule: style
+    rule_open: true
+    match: rule
+    role: value
+    class: logical
+    confidence: high
+    source: rules
+    reason: logical value (default/doc)
+    linked:
+      - dsBaseClient::ds.subset::completeCases
+    note: follows client ds.subset(completeCases)
+  - id: dsBase::subsetDS::rs
+    package: dsBase
+    side: server
+    function: subsetDS
+    current: rs
+    proposed: rows
+    status: proposed
+    rule: style
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.subset::rows
+    note: follows client ds.subset(rows)
+  - id: dsBase::subsetDS::cs
+    package: dsBase
+    side: server
+    function: subsetDS
+    current: cs
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.subset::cols
+    note: follows client ds.subset(cols)
+  - id: dsBase::subsetDS::lg
+    package: dsBase
+    side: server
+    function: subsetDS
+    current: lg
+    proposed: logical.operator
+    status: proposed
+    rule: style
+    rule_open: true
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.subset::logicalOperator
+    note: follows client ds.subset(logicalOperator)
+  - id: dsBase::subsetDS::th
+    package: dsBase
+    side: server
+    function: subsetDS
+    current: th
+    proposed: threshold
+    status: proposed
+    rule: style
+    match: rule
+    role: value
+    class: numeric
+    confidence: medium
+    source: rules
+    reason: numeric value (doc)
+    linked:
+      - dsBaseClient::ds.subset::threshold
+    note: follows client ds.subset(threshold)
+  - id: dsBase::table1DDS::xvect
+    package: dsBase
+    side: server
+    function: table1DDS
+    current: xvect
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.summary::x
+      - dsBaseClient::ds.table1D::x
+    note: follows client ds.summary(x)
+  - id: dsBase::table2DDS::xvect
+    package: dsBase
+    side: server
+    function: table2DDS
+    current: xvect
+    proposed: x
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.table2D::x
+    note: follows client ds.table2D(x)
+  - id: dsBase::table2DDS::yvect
+    package: dsBase
+    side: server
+    function: table2DDS
+    current: yvect
+    proposed: 'y'
+    status: proposed
+    rule: multiple_inputs
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.table2D::y
+    note: follows client ds.table2D(y)
+  - id: dsBase::tableDS.assign::rvar.all.unique.levels.transmit
+    package: dsBase
+    side: server
+    function: tableDS.assign
+    current: rvar.all.unique.levels.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::tableDS.assign::cvar.all.unique.levels.transmit
+    package: dsBase
+    side: server
+    function: tableDS.assign
+    current: cvar.all.unique.levels.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::tableDS.assign::stvar.all.unique.levels.transmit
+    package: dsBase
+    side: server
+    function: tableDS.assign
+    current: stvar.all.unique.levels.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::tableDS.assign::exclude.transmit
+    package: dsBase
+    side: server
+    function: tableDS.assign
+    current: exclude.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::tableDS.assign::useNA.transmit
+    package: dsBase
+    side: server
+    function: tableDS.assign
+    current: useNA.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::tableDS::rvar.all.unique.levels.transmit
+    package: dsBase
+    side: server
+    function: tableDS
+    current: rvar.all.unique.levels.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::tableDS::cvar.all.unique.levels.transmit
+    package: dsBase
+    side: server
+    function: tableDS
+    current: cvar.all.unique.levels.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::tableDS::stvar.all.unique.levels.transmit
+    package: dsBase
+    side: server
+    function: tableDS
+    current: stvar.all.unique.levels.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::tableDS::exclude.transmit
+    package: dsBase
+    side: server
+    function: tableDS
+    current: exclude.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::tableDS::useNA.transmit
+    package: dsBase
+    side: server
+    function: tableDS
+    current: useNA.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::tableDS::force.nfilter.transmit
+    package: dsBase
+    side: server
+    function: tableDS
+    current: force.nfilter.transmit
+    proposed: ''
+    status: unresolved
+    rule: unresolved
+    match: none
+    role: unknown
+    confidence: low
+    source: rules
+    reason: role unknown
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::tapplyDS.assign::X.name
+    package: dsBase
+    side: server
+    function: tapplyDS.assign
+    current: X.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.tapply.assign::X.name
+  - id: dsBase::tapplyDS.assign::INDEX.names.transmit
+    package: dsBase
+    side: server
+    function: tapplyDS.assign
+    current: INDEX.names.transmit
+    proposed: x.transmit
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::tapplyDS::X.name
+    package: dsBase
+    side: server
+    function: tapplyDS
+    current: X.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.tapply::X.name
+  - id: dsBase::tapplyDS::INDEX.names.transmit
+    package: dsBase
+    side: server
+    function: tapplyDS
+    current: INDEX.names.transmit
+    proposed: x.transmit
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - 'dsBaseClient::::'
+  - id: dsBase::testObjExistsDS::test.obj.name
+    package: dsBase
+    side: server
+    function: testObjExistsDS
+    current: test.obj.name
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.testObjExists::test.obj.name
+  - id: dsBase::uniqueDS::x.name.transmit
+    package: dsBase
+    side: server
+    function: uniqueDS
+    current: x.name.transmit
+    proposed: x.transmit
+    status: proposed
+    rule: classes.vector
+    match: alias
+    role: object
+    class: vector
+    confidence: high
+    source: rules
+    reason: vector object (doc)
+    linked:
+      - dsBaseClient::ds.unique::x.name
+  - id: dsBase::unListDS::x.name
+    package: dsBase
+    side: server
+    function: unListDS
+    current: x.name
+    proposed: ''
+    status: unresolved
+    rule: classes
+    match: none
+    role: object
+    confidence: medium
+    source: rules
+    reason: object of unknown class
+    linked:
+      - dsBaseClient::ds.unList::x.name
+  - id: dsBase::varDS::xvect
+    package: dsBase
+    side: server
+    function: varDS
+    current: xvect
+    proposed: x
+    status: proposed
+    rule: classes.vector
+    match: rule
+    role: value
+    confidence: medium
+    source: rules
+    reason: value (doc)
+    linked:
+      - dsBaseClient::ds.var::x
+    note: follows client ds.var(x)
+classifications: []
+
