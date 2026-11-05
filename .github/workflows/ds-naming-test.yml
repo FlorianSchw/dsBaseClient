@@ -11,7 +11,7 @@ jobs:
       pull-requests: write
     uses: nfdi4health/datashield-workflows/.github/workflows/ds-naming-check.yml@main
     with:
-      server-repository: Florian/dsBase
+      server-repository: FlorianSchw/dsBase
       server-ref: v6.3.6-dev
       base-branch: v6.3.6-dev
       max-claude-calls: 0
