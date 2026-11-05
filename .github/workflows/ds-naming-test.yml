@@ -1,0 +1,20 @@
+name: DataSHIELD Argument Naming Check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check-naming:
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+    uses: nfdi4health/datashield-workflows/.github/workflows/ds-naming-check.yml@main
+    with:
+      server-repository: Florian/dsBase
+      server-ref: v6.3.6-dev
+      base-branch: v6.3.6-dev
+      max-claude-calls: 0
+    secrets:
+      app-client-id: ${{ secrets.APP_CLIENT_ID }}
+      app-private-key: ${{ secrets.APP_PRIVATE_KEY }}
